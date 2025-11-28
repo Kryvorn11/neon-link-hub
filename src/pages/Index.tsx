@@ -1,42 +1,10 @@
-import { Instagram, Music, Github, MessageCircle, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import profileAvatar from "@/assets/profile-avatar.jpg";
+import catLeft from "@/assets/cat-left.png";
+import catRight from "@/assets/cat-right.png";
 
 const Index = () => {
-  const socialLinks = [
-    {
-      name: "Instagram",
-      icon: Instagram,
-      url: "https://instagram.com/arzz_chaudhary",
-      username: "@arzz_chaudhary",
-    },
-    {
-      name: "Spotify",
-      icon: Music,
-      url: "https://open.spotify.com/user/arzz_chaudhary",
-      username: "Arzz Chaudhary",
-    },
-    {
-      name: "GitHub",
-      icon: Github,
-      url: "https://github.com/Kryvorn11",
-      username: "@Kryvorn11",
-    },
-    {
-      name: "Reddit",
-      icon: MessageCircle,
-      url: "https://reddit.com/user/Kryvorn",
-      username: "u/Kryvorn",
-    },
-    {
-      name: "Discord",
-      icon: User,
-      url: "#",
-      username: "imaginary_me.hehe",
-    },
-  ];
-
   const interests = [
     "Cooking",
     "Anime",
@@ -51,8 +19,22 @@ const Index = () => {
   const roles = ["Developer", "Coder", "Digital Creator", "Dropshipper"];
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 md:p-8">
-      <div className="w-full max-w-2xl mx-auto space-y-8 animate-fade-in">
+    <div className="min-h-screen w-full flex items-center justify-center p-4 md:p-8 relative overflow-hidden">
+      {/* Cute cat animations on sides */}
+      <div className="fixed left-4 top-1/4 animate-float opacity-30 hover:opacity-60 transition-opacity pointer-events-none hidden md:block">
+        <img src={catLeft} alt="" className="w-24 h-24 neon-glow" />
+      </div>
+      <div className="fixed right-4 top-1/3 animate-float opacity-30 hover:opacity-60 transition-opacity pointer-events-none hidden md:block" style={{ animationDelay: '1s' }}>
+        <img src={catRight} alt="" className="w-24 h-24 neon-glow" />
+      </div>
+      <div className="fixed left-8 bottom-1/4 animate-float opacity-20 hover:opacity-50 transition-opacity pointer-events-none hidden md:block" style={{ animationDelay: '2s' }}>
+        <img src={catLeft} alt="" className="w-20 h-20 neon-glow" />
+      </div>
+      <div className="fixed right-8 bottom-1/3 animate-float opacity-20 hover:opacity-50 transition-opacity pointer-events-none hidden md:block" style={{ animationDelay: '0.5s' }}>
+        <img src={catRight} alt="" className="w-20 h-20 neon-glow" />
+      </div>
+
+      <div className="w-full max-w-2xl mx-auto space-y-8 animate-fade-in relative z-10">
         {/* Profile Section */}
         <div className="text-center space-y-4">
           <div className="relative inline-block">
@@ -104,39 +86,21 @@ const Index = () => {
           </p>
         </Card>
 
-        {/* Social Links */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-center text-secondary">Connect With Me</h2>
-          <div className="space-y-3">
-            {socialLinks.map((link, index) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Button
-                    variant="outline"
-                    className="w-full h-auto py-4 px-6 text-left flex items-center justify-between neon-glow bg-card/30 backdrop-blur-sm border-primary/30 hover:border-primary hover:bg-primary/10"
-                  >
-                    <div className="flex items-center gap-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                      <div>
-                        <p className="font-semibold text-foreground">{link.name}</p>
-                        <p className="text-sm text-muted-foreground">{link.username}</p>
-                      </div>
-                    </div>
-                    <div className="text-primary">→</div>
-                  </Button>
-                </a>
-              );
-            })}
-          </div>
-        </div>
+        {/* Auto-scrolling Lyrics Box */}
+        <Card className="p-6 md:p-8 bg-card/40 backdrop-blur-md border-primary/20 neon-glow space-y-4">
+          <h2 className="text-2xl font-bold text-center gradient-text">Now Playing: Fairytale</h2>
+          <p className="text-center text-sm text-muted-foreground">by Alexander Rybak</p>
+          <ScrollArea className="h-64 w-full rounded-md">
+            <div className="space-y-4 text-center px-4 animate-fade-in">
+              <p className="text-foreground/80 leading-relaxed italic">
+                [Your lyrics or personal message can go here]
+              </p>
+              <p className="text-sm text-muted-foreground mt-8">
+                Note: Add your own lyrics or personal text here. Due to copyright, I cannot include the original song lyrics.
+              </p>
+            </div>
+          </ScrollArea>
+        </Card>
 
         {/* Interests Section */}
         <Card className="p-6 md:p-8 bg-card/50 backdrop-blur-sm border-secondary/20 space-y-4">
