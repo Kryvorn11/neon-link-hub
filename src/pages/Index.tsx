@@ -79,9 +79,30 @@ const Index = () => {
               <p className="text-foreground/80 leading-relaxed italic">
                 [Your lyrics or personal message can go here]
               </p>
-              <p className="text-sm text-muted-foreground mt-8">
-                Note: Add your own lyrics or personal text here. Due to copyright, I cannot include the original song lyrics.
-              </p>
+              <p className="text-sm text-muted-foreground mt-8">Years ago, when I was younger
+I kinda liked a girl I knew
+She was mine and we were sweethearts
+That was then, but then it's true
+I'm in love with a fairytale
+Even though it hurts
+'Cause I don't care if I lose my mind
+I'm already cursed
+Every day, we started fighting
+Every night, we fell in love
+No one else could make me sadder
+But no one else could lift me high above
+I don't know what I was doing
+When suddenly, we fell apart
+Nowadays, I cannot find her
+But when I do, we'll get a brand new start
+I'm in love with a fairytale
+Even though it hurts
+'Cause I don't care if I lose my mind
+I'm already cursed
+She's a fairytale, yeah
+Even though it hurts
+'Cause I don't care if I lose my mind
+I'm already cursed</p>
             </div>
           </ScrollArea>
         </Card>
